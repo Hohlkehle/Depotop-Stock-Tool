@@ -38,7 +38,7 @@ namespace Depotop_Stock_Tool
             }
 
             Console.WriteLine(str);
-
+            Console.ReadKey();
             return ;
 
             var donnes = new CsvFile(m_Options.DonnesFile);

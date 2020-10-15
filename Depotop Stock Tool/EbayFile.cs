@@ -18,13 +18,13 @@ namespace Depotop_Stock_Tool
         public class EbayRow
         {
             List<string> m_Line;
-            string m_Availabity;
+            string[] m_Availabity = null;
             string m_SKU;
             public long ID { get { return Valid ? long.Parse(Line[0]) : 0; } }
             public string Model { get { return Valid ? Line[1] : String.Empty; } }
             public string SKU { get => m_SKU; set => m_SKU = value; }
             public int Quantity { get { return Valid ? int.Parse(Line[5]) : 0; } }
-            public string Availabity { get => m_Availabity; set => m_Availabity = value; }
+            public string[] Availabity { get => m_Availabity; set => m_Availabity = value; }
             public EbayRow(List<string> line)
             {
                 Line = line;
@@ -96,12 +96,12 @@ namespace Depotop_Stock_Tool
             return dump;
         }
 
-        public List<string> IDDump()
+        public List<long> IDDump()
         {
-            List<string> dump = new List<string>();
+            List<long> dump = new List<long>();
             foreach (var row in Rows)
             {
-                dump.Add(row.ID.ToString());
+                dump.Add(row.ID);
             }
             return dump;
         }

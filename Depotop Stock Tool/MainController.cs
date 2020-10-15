@@ -34,6 +34,10 @@ namespace Depotop_Stock_Tool
                 if (opt == Options.GetOptionsNames(Options.OptionsNames.Demande) || opt == Options.GetOptionsNames(Options.OptionsNames.Donnes) || opt == Options.GetOptionsNames(Options.OptionsNames.Input))
                     continue;
                 var file = Options.GetPath(opt + "_*");
+                
+                if (!System.IO.File.Exists(file))
+                    continue;
+
                 Console.WriteLine(String.Format("EbayFile: {0}", file));
 
                 var ebay = new EbayFile(file);
