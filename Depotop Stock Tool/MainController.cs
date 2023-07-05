@@ -24,7 +24,7 @@ namespace Depotop_Stock_Tool
 
         public void LoadExterne()
         {
-            Console.WriteLine(String.Format("Loading externes started"));
+            Console.WriteLine(String.Format("Loading externes started "));
             var inputOptions = Options.GetAllOptionsNames();
 
             m_Externes = new List<EbayFile>();
